@@ -8,8 +8,10 @@ import emoji
 
 
 # define global variables 
-face_detection = "" 
-faceset_initialize = "" 
+face_detection = ""
+face_comparing_localphoto=""
+face_comparing_websitephoto=""
+faceset_initialize = ""
 face_search = "" 
 face_landmarks = "" 
 dense_facial_landmarks = "" 
@@ -25,8 +27,8 @@ def face_comparing(app, Image1, Image2):
 	print('-'*30) 
 
 
-	cmp_ = app.compare.get(image_url1 = Image1, 
-						image_url2 = Image2) 
+	cmp_ = app.compare.get(image_url1 =Image1, 
+						image_url2 =Image2) 
 
 	print('Photo1', '=', cmp_.image1) 
 	print('Photo2', '=', cmp_.image2) 
@@ -102,14 +104,14 @@ if __name__ == '__main__':
 		] 
 		
 		# Pair 1 
-		image1 = 'Image 1 link'
-		image2 = 'Image 2 link'
+		image1 = "https://i.postimg.cc/wj2dJKKF/images.jpg"
+		image2 = "https://i.postimg.cc/bJPj7zjx/sr.jpg"
 		face_comparing(app_, image1, image2) 
 		
 		# Pair2 
-		image1 = 'Image 1 link'
-		image2 = 'Image 2 link'
+		image1 = "https://i.postimg.cc/bJPj7zjx/sr.jpg"
+		image2 = "https://i.postimg.cc/T2gqCfkd/download-1.jpg"
 		face_comparing(app_, image1, image2)		 
 
 	except exceptions.BaseFacePPError as e: 
-		print('Error:', e) 
+		print('Error:', e)
